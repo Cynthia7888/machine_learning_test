@@ -29,8 +29,9 @@ Open the local URL printed by Streamlit, usually <http://localhost:8501>.
    - Breast Cancer (classification)
    - Diabetes (regression)
 2. Select one or more compatible models.
-3. Click **Train and compare** to view the performance table and chart.
+3. Click **Train and compare** to view held-out test performance.
+4. After training, use **Validate labeled CSV** to score a separate labeled dataset, or **Predict from text input** to get predictions for one or more comma-separated feature rows.
 
 Classification datasets offer Logistic Regression, Decision Tree, and Random Forest. Their results include Accuracy and weighted F1. The regression dataset offers Linear Regression, Decision Tree, and Random Forest, with R², RMSE, and MAE.
 
-The app uses a 75/25 train/test split with a fixed random state so model comparisons use the same test data.
+The app uses a 75/25 train/test split with a fixed random state so model comparisons use the same test data. The optional validation CSV must include all feature columns from the selected dataset and one target column. Choose the target column in the app; class targets may use numeric codes or the dataset's class names. Extra CSV columns are ignored. Text input accepts numeric feature values in the displayed feature order, one row per line.
